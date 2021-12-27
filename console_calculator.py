@@ -1,7 +1,8 @@
 print("*" * 10, "Calculator", "*" * 10)
 print("To exit from program type q")
 
-while True:
+try:
+ while True:
     arithmetic_operators = input("Choose arithmetic operation (+ - * /):\n")
     if arithmetic_operators == "q":
         break
@@ -22,4 +23,6 @@ while True:
                 print("You can't divide by zero!")      
     else:
         print("Invalid symbol!")
-        
+
+except (KeyboardInterrupt, EOFError) as e:
+    print(e)
